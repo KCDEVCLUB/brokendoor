@@ -5,13 +5,26 @@ dist
 # database volume
 db_*
 
-# cache
+# cache & config
+.npm
+cache/
+.cache
+.temp
 .vscode
+.eslintcache
 .idea
 .DS_STORE
+.yarn/cache
 
 # logs
 *.log*
 
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
 # tests
 coverage/
+lib-cov
+*.lcov
+.nyc_output
+.vscode-test
