@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "prettier:fix": "prettier --config .prettierrc --write \"**/*.{js,jsx,css}\"",
     "lint-staged": "lint-staged",
-    "lint": "eslint 'src/**/*.{js,jsx}",
+    "lint": "eslint 'src/**/*.js'",
     "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
@@ -25,7 +25,8 @@
   "homepage": "https://github.com/jtkwon/brokendoor#readme",
   "lint-staged": {
     "*.{js,jsx}": [
-      "npm run prettier:fix"
+      "npm run prettier:fix",
+      "npm run lint:fix"
     ],
     "*.{md,json,yml}": [
       "prettier --write"
