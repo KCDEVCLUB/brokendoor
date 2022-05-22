@@ -1,0 +1,51 @@
+version: '3.9'
+services:
+  server:
+    restart: on-failure
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    container_name: brokendoor-server
+    environment:
+      DB_HOST: pg
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    links:
+      - pg
+    volumes:
+      - .:/app
+      - /app/node_modules
+  client:
+    restart: on-failure
+    build:
+      context: ./client
+    ports:
+      - '3000:3000'
+    container_name: brokendoor-client
+    stdin_open: true
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+  pg:
+    image: postgres:14.3-alpine
+    restart: on-failure
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./db_pg:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  redis:
+    image: redis:7.0.0-alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - ./db_redis:/data
+volumes:
+  db:
+    driver: local

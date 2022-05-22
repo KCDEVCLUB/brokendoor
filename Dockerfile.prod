@@ -1,0 +1,16 @@
+FROM node:alpine3.15 AS builder
+WORKDIR /app
+COPY client ./client
+WORKDIR /app/client
+RUN npm install
+RUN npm run build
+
+FROM node:alpine3.15
+WORKDIR /app
+COPY ["package.json", "index.js", "./"]
+COPY src ./src
+RUN npm install
+COPY --from=builder /app/dist ./dist
+EXPOSE 8080
+
+CMD ["node", "index.js"]

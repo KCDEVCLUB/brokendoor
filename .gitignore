@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+
+# database volume
+db_*
+
+# cache
+.vscode
+.idea
+.DS_STORE
+
+# logs
+*.log*
+
+# tests
+coverage/

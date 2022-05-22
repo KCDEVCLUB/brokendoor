@@ -1,0 +1,4 @@
+-- CREATION OF SAMPLE TABLE
+CREATE TABLE IF NOT EXISTS sample (
+    sample_id INT NOT NULL
+);

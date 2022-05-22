@@ -1,0 +1,30 @@
+{
+  "name": "brokendoor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run start --prefix=client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtkwon/brokendoor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtkwon/brokendoor/issues"
+  },
+  "homepage": "https://github.com/jtkwon/brokendoor#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "concurrently": "^7.2.0",
+    "nodemon": "^2.0.16"
+  }
+}
