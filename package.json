@@ -29,7 +29,8 @@
     "*.{js,jsx}": [
       "npm run prettier:fix",
       "npm run lint:fix",
-      "npm run test"
+      "npm run test",
+      "npm run test --prefix=client"
     ],
     "*.{md,json,yml}": [
       "prettier --write"
