@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "BUILD_PATH='../dist' react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4"
   }
 }
