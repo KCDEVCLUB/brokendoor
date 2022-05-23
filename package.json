@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build --prefix=client",
     "test:watch": "concurrently \"./node_modules/jest/bin/jest.js --watchAll\" \"npm test --prefix=client\"",
-    "test": "./node_modules/jest/bin/jest.js",
+    "test": "./node_modules/jest/bin/jest.js ./src",
     "client": "npm run start --prefix=client",
     "server": "nodemon index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -29,8 +29,8 @@
     "*.{js,jsx}": [
       "npm run prettier:fix",
       "npm run lint:fix",
-      "npm run test",
-      "npm run test --prefix=client"
+      "npm test",
+      "npm test --prefix=client"
     ],
     "*.{md,json,yml}": [
       "prettier --write"

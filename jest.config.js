@@ -101,13 +101,6 @@ module.exports = {
   // preset: undefined,
 
   // Run tests from one or more projects
-  projects: [
-    {
-      displayName: 'server',
-      testEnvironment: 'node',
-      testMatch: ['<rootDir>/src/**/*.test.js'],
-    },
-  ],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
@@ -128,9 +121,7 @@ module.exports = {
   // rootDir: undefined,
 
   // A list of paths to directories that Jest should use to search for files in
-  // roots: [
-  //   "<rootDir>"
-  // ],
+  roots: ['./src'],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
@@ -163,9 +154,7 @@ module.exports = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  testPathIgnorePatterns: ['/node_modules/', '/client'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

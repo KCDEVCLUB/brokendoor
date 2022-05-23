@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "BUILD_PATH='../dist' react-scripts build",
-    "test": "react-scripts test --watchAll=false --coverage",
+    "test": "react-scripts test --verbose --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
